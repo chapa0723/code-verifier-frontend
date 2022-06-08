@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 import { useSessionStorage } from "../hooks/useSessionStorage";
 import { getAllKatas } from "../services/katasServices";
+import { Kata } from "../utils/types/Kata.type";
 
 export const KatasPage = () => {
 
@@ -42,7 +43,7 @@ export const KatasPage = () => {
      * Method to Navigate to Katas Detail
      * @param id of katas to navigate
      */
-    const navigateToKatasDetail = (id: number) => {
+    const navigateToKatasDetail = (id: string) => {
         navigate (`/katas/${id}`);
     }
 
@@ -52,16 +53,17 @@ export const KatasPage = () => {
     
         { katas.length > 0 ?
             <div>
-                <ul>
                 {/* TODO: Export to isoleted component */}
-                { katas.map((kata:any) => 
+                { katas.map((kata: Kata) => 
                 (
-                    <li key={kata._id}>
-                        {kata.name}
-                    </li>
+                    <div key={kata._id}>
+                        <h3 onClick={()=> navigateToKatasDetail (kata._id)} >{kata.name}</h3>
+                        <h4>{kata.level}</h4>
+                        <h5>Creator: {kata.creator}</h5>
+                        <h5>Stars: {kata.stars}/5</h5>
+                    </div>
                 )
                 )}
-                </ul>
             </div>
         :
             <div>

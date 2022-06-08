@@ -17,3 +17,15 @@ export const getAllKatas = (token:string, limit?:number, page?:number) => {
     
     return axios.get('/katas', options)
 }
+
+export const getKatasByID = (token: string, id: string) => {
+    const options: AxiosRequestConfig = {
+        headers: {
+            'x-access-token': token
+        },
+        params: {
+            id
+        }    
+    }
+    return axios.get('/katas', options)
+}
