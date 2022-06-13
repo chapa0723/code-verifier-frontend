@@ -8,6 +8,7 @@ import { HomePage } from './pages/HomePage';
 import { LoginPage } from './pages/LoginPage';
 import { RegisterPage } from './pages/RegisterPage';
 import { KatasDetailPage } from './pages/KatasDetailPage';
+import { AppRoutes } from './routes/Routes';
 
 // import LoginForm from './components/Forms/LoginForm';
 // import RegisterForm from './components/Forms/RegisterForm';
@@ -36,19 +37,7 @@ function App() {
             </li>
           </ul>
         </nav>
-        {/* TODO: Export to routes folder */}
-        <Routes>
-          <Route path='/' element={<HomePage />} />
-          <Route path='/login' element={<LoginPage />} />
-          <Route path='/register' element={<RegisterPage />} />
-          <Route path='/katas' element={<KatasPage />} />
-          <Route path='/katas/:id' element={<KatasDetailPage />} />
-          {/* Redirect when Page not found */}
-          <Route 
-          path='/*' 
-          element={<Navigate to= '/' replace />} >
-          </Route>
-        </Routes>
+        <AppRoutes />
       </Router>
 
     </div>
