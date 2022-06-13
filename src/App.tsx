@@ -2,13 +2,7 @@ import React from 'react';
 import './App.css';
 
 // React router dom import
-import { BrowserRouter as Router, Routes, Route, Navigate, Link } from 'react-router-dom';
-import { KatasPage } from './pages/KatasPage';
-import { HomePage } from './pages/HomePage';
-import { LoginPage } from './pages/LoginPage';
-import { RegisterPage } from './pages/RegisterPage';
-import { KatasDetailPage } from './pages/KatasDetailPage';
-import { AppRoutes } from './routes/Routes';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
 
 // import LoginForm from './components/Forms/LoginForm';
 // import RegisterForm from './components/Forms/RegisterForm';
